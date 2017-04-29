@@ -11,3 +11,9 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+<h2>List all postings</h2>
+    <% @all_postings.each do |p| %>
+        <h3>Title : <%= p.title %></h3>
+        <p>Content : <%= p.posting_content %></p>
+    <% end %>
