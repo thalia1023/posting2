@@ -1,1 +1,13 @@
-<h1>Listing All Postings</h1>
+<h1>Add a posting</h1>
+
+<form action="/postings/create" method="POST">
+    <div class="form-group">
+      <label for="title">Title :</label>
+      <input type="text" class="form-control" name="title" id="title">
+    </div>
+    <div class="form-group">
+      <label for="posting_content">Content :</label>
+      <textarea class="form-control" name="content" rows="5" id="content"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
