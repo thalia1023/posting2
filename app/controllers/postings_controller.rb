@@ -1,6 +1,7 @@
 class PostingsController < ApplicationController
     def index
         @all_postings = Posting.all
+        @all_comments = Comment.all
     end
     
     def create

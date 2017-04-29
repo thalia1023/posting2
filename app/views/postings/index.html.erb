@@ -16,10 +16,18 @@
     <% @all_postings.each do |p| %>
         <h3>Title : <%= p.title %></h3>
         <p>Content : <%= p.posting_content %></p>
+        
+        <% @all_comments.each do |c| %>
+        <% if c.posting_id == p.id %>
+            <p><%= c.comment_content%></p>
+        <% end %>
+        
         <form action="/comments/create" method="POST">
-           <label for="Comment">Comment :</label>
-           <input type="hidden" value="<%= p.id %>" name="id_of_posting">
-           <textarea class="form-control" name="comment" rows="1" id="comment"></textarea>
-           <button type="submit" class="btn btn-default">Submit</button>
+            <div class="form-group">
+               <label for="Comment">Comment :</label>
+               <input type="hidden" value="<%= p.id %>" name="id_of_posting">
+               <textarea class="form-control" name="comment" rows="1" id="comment"></textarea>
+               <button type="submit" class="btn btn-default">Submit</button>
+           </div>
         </form>
     <% end %>
