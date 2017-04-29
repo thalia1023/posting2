@@ -13,14 +13,14 @@
         belongs_to :User
         has_many :Comments
     - Elements
-        title, body, user_id
+        title, body(posting_content), user_id
 
 3. Comments
     - Relationships
         belongs_to :Users
         belongs_to :Postings
     - Elements
-        content, user_id, posting_id
+        comment_content, user_id, posting_id
 
 -------------------------------------
 
