@@ -17,10 +17,13 @@
     <% @all_postings.each do |p| %>
         <h3>Title : <%= p.title %></h3>
         <p>Content : <%= p.posting_content %></p>
+        
+        <% if p.user_id == current_user.id %>
         <p>
             <a href="/postings/edit/<%= p.id %>">edit</a>
             <a href="/postings/destroy/<%= p.id %>">delete</a>
         </p>
+        <% end %>
         
         <% @all_comments.each do |c| %>
             <% if c.posting_id == p.id %>

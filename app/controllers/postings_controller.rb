@@ -1,4 +1,7 @@
 class PostingsController < ApplicationController
+
+    before_action :authenticate_user!, except: [:index]
+    
     def index
         @all_postings = Posting.all
         @all_comments = Comment.all
@@ -6,6 +9,7 @@ class PostingsController < ApplicationController
     
     def create
         posting = Posting.new
+        posting.user_id = current_user.id
         posting.title = params[:title]
         posting.posting_content = params[:content]
         if posting.save
