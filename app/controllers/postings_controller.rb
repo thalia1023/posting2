@@ -3,9 +3,10 @@ class PostingsController < ApplicationController
     before_action :authenticate_user!, except: [:index]
     
     def index
-        @all_postings = Posting.all
+        @all_postings = Posting.all.paginate(:page => params[:page], :per_page => 5).order('id DESC')
         @all_comments = Comment.all
     end
+    
     
     def create
         posting = Posting.new

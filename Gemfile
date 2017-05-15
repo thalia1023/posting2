@@ -32,6 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'devise'
 gem 'devise'
 
+#gen 'paginate'
+gem 'will_paginate', '~> 3.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -48,5 +51,19 @@ group :development do
   gem 'spring'
   gem 'better_errors', '~> 2.1', '>= 2.1.1'
   gem 'binding_of_caller', '~> 0.7.2'
+  gem 'annotate', '~> 2.7'
 end
+
+group :development do
+  gem 'sqlite3'
+end
+
+gem 'rails_12factor', group: :production
+
+group :production do
+  gem 'pg'
+end
+
+ruby "2.3.0"
+
 

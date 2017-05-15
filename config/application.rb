@@ -24,3 +24,17 @@ module Workspace
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
+
+module Deviseapp
+  class Application < Rails::Application
+    ActionMailer::Base.smtp_settings = {
+      :address => 'smtp.mailgun.org',
+      :port => 587,
+      :enable_starttls_auto => true,
+      :domain => 'sandbox4c5eacd3bcea470f8363198443c082d3.mailgun.org',
+      :user_name => 'postmaster@sandbox4c5eacd3bcea470f8363198443c082d3.mailgun.org',
+      :password => '0b9731c708ce3c7060df09bc1a7e1304',
+      :authentication => :plain,
+      }
+  end
+end
